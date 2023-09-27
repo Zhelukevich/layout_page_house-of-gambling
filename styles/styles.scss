@@ -1,7 +1,6 @@
 @import "./reset";
 @import "./fonts";
 @import "./variables";
-@import "./mediaQueries";
 
 body {
   font-family: "Lexend", Arial, Helvetica, sans-serif;
@@ -37,19 +36,16 @@ body {
 }
 
 .header__wrapper {
+  position: relative;
   width: 100%;
   min-height: 96px;
   padding: 24px 48px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-radius: 64px;
   border: 4px solid $blue-color;
   background-color: $background-color;
-}
-
-.header__logo {
-  visibility: hidden;
 }
 
 .header__nav {
@@ -71,7 +67,13 @@ body {
 }
 
 .header__btn-list {
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+
   display: flex;
+  align-items: center;
   gap: 14px;
 
   .header__btn-item {
@@ -110,6 +112,53 @@ body {
       fill: $background-color;
     }
   }
+}
+
+/* burger */
+.header__burger-btn {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+}
+
+.header__burger-btn span {
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: $white-color;
+  left: 5px;
+  transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
+  border-radius: 50rem;
+}
+
+.header__burger-btn:hover span {
+  background-color: $blue-color;
+}
+
+.header__burger-btn:active span {
+  background-color: $blue-color;
+}
+
+.header__burger-btn span:nth-child(1) {
+  transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3) {
+  transform: translateY(10px);
+}
+
+.header.open .header__burger-btn span:nth-child(1) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.header.open .header__burger-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3) {
+  transform: translateY(0) rotate(45deg);
 }
 
 // HERO
@@ -175,6 +224,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100dvh;
+  padding-top: 120px;
 }
 
 .hero__info {
@@ -398,6 +448,7 @@ body {
       .hero-blog__time {
         margin-top: auto;
         color: $text-color-opacity;
+        font-family: "Futura PT";
         font-size: 14px;
         font-weight: 450;
         line-height: 16px;
@@ -500,6 +551,7 @@ body {
   height: 100%;
 
   svg {
+    flex: 1 0 auto;
     width: 32px;
     height: 32px;
 
@@ -512,3 +564,4 @@ body {
     fill: url(#gradientSVG);
   }
 }
+@import "./mediaQueries";
