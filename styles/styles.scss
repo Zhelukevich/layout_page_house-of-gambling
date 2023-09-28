@@ -110,6 +110,7 @@
   z-index: 2;
 
   span {
+    position: absolute;
     width: 21px;
     height: 3px;
     background-color: $white-color;
@@ -126,16 +127,15 @@
   }
 
   & span:nth-child(1) {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
 
   & span:nth-child(3) {
-    transform: translateY(4px);
+    transform: translateY(6px);
   }
 
   &.burger-animation-btn span:nth-child(1) {
     transform: translateY(0) rotate(-45deg);
-    transform-origin: top;
   }
 
   &.burger-animation-btn span:nth-child(2) {
