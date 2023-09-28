@@ -2,7 +2,7 @@
 
 ## Raise your ROI with direct advertiser
 
-https://app.netlify.com/sites/phenomenal-monstera-12a84b/overview
+https://phenomenal-monstera-12a84b.netlify.app/
 
 <div align="center">
   <img src="./1920 - Main_Page.webp" alt="АЛЬТЕРНАТИВНЫЙ_ТЕКСТ" style="width: 100%;">
